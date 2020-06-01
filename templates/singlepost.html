@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+   <title>Myblog</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{{ url_for('static',filename='bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='singlepost.css')}}">
+    
+    
+   <script src="{{ url_for('static',filename='main.js')}}"></script>
+    <script src="{{url_for('static',filename='jquery.3.2.1.min.js')}}"></script>
+    
+    </head>
+    {%extends "header.html"%} 
+<body>
+       
+{%block content%}
+
+        
+<div style="overflow: auto;">
+    {%for row in singlepost%}
+    
+    <div><img src="{{url_for('static', filename=row['post_img'])}}" class="singlepost-image"/></div>
+    <div class="col avatar-container text-center"><a href="/user?userId={{row['user_id']}}"><img src="{{url_for('static',filename=row['user_img'])}}" class="avatar"/></a><h4  style="margin-left: 10px; color:white; font-size: 30px;">{{row["name"]}}</h4></div>
+    
+  <div style="margin-top: 50px; display:flex;justify-content: center; margin-left:10px;"> {{row["title"]|safe}}</div>
+  
+
+      <div class="comment-container" style="display: flex;justify-content:center; margin-left: 10px;">
+       
+      </div>
+
+     <div  style="padding:40px">
+        {%if session["user_id"]==row['user_id']%}
+      <form action="/createcomment?postId={{row['id']}}" method="POST">
+      <div style="display: flex;justify-content: center;"> <textarea type="text" id="title" name="title" placeholder="Write comment" class=" createcomment"></textarea></div>
+      <div style="display: flex;justify-content: center;" ><input    type="submit"  value="Submit" class="input-button"/></div>
+      </form>
+      {%else%}
+      <div style="display: flex;justify-content: center"><h3 style="font-size: 20px;">Login to comment</h3></div>
+<div style="display: flex;justify-content: center;"><a href="/login" ><button class="logoutbutton">Login</button></a></div>
+</div>
+      {%endif%}
+
+
+        </div>
+
+
+
+<script>
+        function createcomment(){
+
+            $(".input-button").click(function(){
+            
+                id=$(this).attr('id')
+                
+                
+            
+                $.ajax({
+                    url:`http://127.0.0.1:5000/createcomment`,
+                  
+                    data:{
+                          id:JSON.stringify(id),
+                          title:$("#title").val()
+                    },
+                    type:"POST",
+                    success:function(data){
+                        alert(data.message);
+                    }
+                })
+            
+            })
+            
+            
+            
+            }
+            </script>
+
+
+    {%endfor%}
+  
+{%endblock%}
+    
+</body>

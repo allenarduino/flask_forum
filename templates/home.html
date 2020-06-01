@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+   <title>Myblog</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{{ url_for('static',filename='bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='home.css')}}">
+    
+    
+   <script src="{{ url_for('static',filename='main.js')}}"></script>
+    <script src="{{url_for('static',filename='jquery.3.2.1.min.js')}}"></script>
+    
+    </head>
+    {%extends "header.html"%} 
+<body>
+       
+{%block content%}
+
+        
+{% for row in posts%} 
+
+<div  class="body-container">
+<div class="col-lg-4 post-container">
+        <div class="avatar-container"><a href="/user?userId={{row['user_id']}}"><img class="avatar" class="post-img" src="{{url_for('static',filename=row['user_img'])}}" /></a><h4  style="margin-left: 10px;">{{row["name"]}}</h4></div>
+        <h3 class="post-title" style="text-align: center;color:#333">{{row['title']}}</h3>
+<img class=" post-img" src="{{url_for('static',filename=row['post_img'])}}"/>
+ <div style="display: flex;flex-direction: row; justify-content: space-between"> <h3 style="font-size: 15px;"><a href="/showcomments?postId={{row['id']}}" style="text-decoration:none;color:#333">{{row["totalcomments"]}} Comments</a></h3>
+    <div style="display: flex;justify-content: center "><a href="/singlepost?postId={{row['id']}}"><input type="text" placeholder="Write comment" class="nameinput"/></a></div>
+
+
+    {%if session["user_id"]==row["user_id"]%}
+  <a href="/deletepost?postId={{row['id']}}"><button  class="delete-button">Delete</button></a>
+    {%endif%}
+
+   
+</div>  
+</div>
+<script>
+function deletepost(){
+
+$(".delete-button").click(function(){
+
+    id=$(this).attr('id')
+    data=JSON.stringify(id)
+
+    $.ajax({
+        url:`http://127.0.0.1:5000/deletepost`,
+      
+        data:data,
+        type:"POST",
+        success:function(data){
+            alert(data.message);
+        }
+    })
+
+})
+
+
+
+}
+</script>
+
+</div>
+
+
+
+{%endfor%}   
+
+{%endblock%}
+    
+</body>

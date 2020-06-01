@@ -1,0 +1,51 @@
+
+.avatar{
+    width:50px;
+    height:50px;
+    border-radius: 50px;
+    border:5px solid white;
+    box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
+    -o-box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
+    -ms-box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
+      
+}
+
+.avatar-container{
+    margin-top: 10px;
+    flex-direction: row;
+    display:flex;
+    
+}
+
+.comment-container{
+margin-right: 10px;
+margin-top: 40px;
+margin-left: 10px;
+border-radius: 12px;
+background-color: white;
+padding-right:10px;
+padding-left: 10px;
+padding-bottom: 10px;
+
+box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
+-moz-box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
+-webkit-box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
+-o-box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
+-ms-box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
+  
+
+
+
+}
+
+.delete-button{
+  margin-right: 20px;
+  background-color:   rgb(184, 23, 103);
+  border:rgb(184, 23, 103);
+  color:white;
+  border-radius: 8px;
+  margin-top: 8px;
+
+}

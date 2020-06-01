@@ -1,0 +1,80 @@
+.nav-container{
+    background-color: rgb(184, 23, 103);
+    box-shadow: 2px 0px 2px 2px;
+    height: 50px;
+    position: fixed;
+    z-index: 5;
+    width: 100vw;
+    margin:0;
+}
+
+.logo{
+    margin-left: 30px;
+    margin-top: 5px;
+    width:40px;
+    height: 40px;
+    border-radius: 40px;
+}
+
+.joinbutton{
+    margin-top: 10px;
+    margin-right: 40px;
+    background-color: transparent;
+    border:2px solid white;
+    color:white;
+    border-radius: 7px;
+    width:60px;
+    font-size: 17px;
+    
+
+}
+
+.joinbutton:hover{
+    background-color: palevioletred;
+    color: white;
+}
+.joinbutton a{
+    color:white;
+    text-decoration: none;
+}
+
+
+
+
+.main-nav{
+    list-style-type: none;
+    float: right;
+    margin-right: 20px;
+      
+}
+
+@media only screen and (max-width:768px){
+
+}
+
+
+.nav-links{
+    padding: 12px;
+    display: inline;
+    float: left;
+}
+
+.nav-links a{
+    color:white;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.nav-links a:hover{
+color:palevioletred;
+}
+
+.nav-links a:active{
+    color: palevioletred;
+}
+
+
+
+
+
+

@@ -1,0 +1,28 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+            
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+   <title>Myblog</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{{ url_for('static',filename='bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='bootstrap.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='myprofile.css')}}">
+    
+   <!-----<script src="{{ url_for('static',filename='main.js')}}"></script>
+    <script src="{{url_for('static',filename='jquery.3.2.1.min.js')}}"></script>-->
+    
+    </head>
+
+
+
+
+    {%extends "header.html"%}
+
+{%block content%}
+<div style="overflow: auto; display: flex; justify-content: center;align-items: center;">
+
+<h3 style="margin-top: 300px;">Comment created Sucessfully</h3>
+</div>
+{%endblock%}

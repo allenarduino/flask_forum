@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {%block head%}
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  {%block title%}  <title>Myblog</title>{%endblock%}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{{ url_for('static',filename='bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='nav.css')}}">
+   <!-----<script src="{{ url_for('static',filename='main.js')}}"></script>
+    <script src="{{url_for('static',filename='jquery.3.2.1.min.js')}}"></script>-->
+    
+    </head>
+    {%endblock%}
+
+    <body>
+        
+        
+        <div class="nav-container row">
+       <a href="/"><img src="{{url_for('static',filename='facebook_profile_image.png')}}" class="logo pull-left logo"/></a>
+            {%if 'user_id' is  in session%}
+        <ul class="main-nav">
+            <li class="nav-links"><a href="/">Home</a></li>
+            <li class="nav-links"><a href="/myprofile">Profile</a></li>
+        </ul>
+        {%else%}
+        <button class="pull-right joinbutton"><a href="/join">Join</a></button>
+        {%endif%}
+
+        </div>
+        {%block content%}{%endblock%}
+        
+    </body>
+
+</html>

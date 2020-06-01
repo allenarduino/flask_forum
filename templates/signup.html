@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+   <title>Myblog</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{{ url_for('static',filename='bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='signup.css')}}">
+   <script src="{{ url_for('static',filename='main.js')}}"></script>
+    <script src="{{url_for('static',filename='jquery.3.2.1.min.js')}}"></script>
+    
+    </head>
+
+
+
+
+    {%extends "header.html"%}
+
+{%block content%}
+
+<div class="formbackground col text-center">
+    <div class="form-container col text-center">
+        <h3 style="font-size: 25px;color:grey">Sign up</h3>
+        <h3 id="erroroutput" style="font-size: 20px;color:red;"></h3>
+        <h3 id="messageoutput" style="font-size: 20px;color:green;"></h3>
+        <a href="/loginpage" id="lognow" style="text-decoration: none;"></a>
+   <form>
+       <input required="true" type="text" id="name" name="name" placeholder="Name" class="form-control text-input"/>
+       <input required="true" type="email" id="email" name="email" placeholder="Email Address" class="form-control text-input"/>
+       <input required="true" type="password" id="password" name="password" placeholder="Password" class="form-control text-input"/>
+       <input type="submit"  value="Sign up" class="input-button"/>
+   </form>
+
+   <h3 style="font-size:13px;color:grey;">Already have an account?<a style="text-decoration:none;color: rgb(72, 10, 131);" href="/loginpage">login</a></h3>
+   </div>
+   <script>
+        
+    
+    $(document).ready(function(){
+        $("form").on("submit",function(event){
+            event.preventDefault();
+            $.ajax({
+            data:{
+                name:$("#name").val(),
+                email:$("#email").val(),
+                password:$("#password").val(),
+            },
+            type:"POST",
+            url:" http://127.0.0.1:5000/signup"
+        })
+        .done(function(data){
+            if (data.error==null){
+                $("#messageoutput").text(data.message).show();
+                $("#lognow").text("Log in now").show();
+            }
+            else if(data.message==null){
+                $("#erroroutput").text(data.error).show();
+            }
+         
+        })
+
+    })
+        })
+    
+     
+    
+    
+    </script>
+</div>
+
+
+{%endblock%}

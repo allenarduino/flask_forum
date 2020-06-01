@@ -1,0 +1,44 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+   <title>Myblog</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{{ url_for('static',filename='bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='bootstrap.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='createpost.css')}}">
+   <script src="{{ url_for('static',filename='main.js')}}"></script>
+   <script src="{{ url_for('static',filename='ckeditor/ckeditor.js')}}"></script>
+   <script src="{{url_for('static',filename='jquery.3.2.1.min.js')}}"></script>
+    
+    
+    </head>
+
+
+
+
+    {%extends "header.html"%}
+
+{%block content%}
+
+   <div class="createpost-background ">
+    <div class="createpost-container col text-center">
+   <form action="/createpost/" enctype="multipart/form-data" method="POST">
+       <h3 style="font-size: 25px;color:grey;margin-top: 50px;">Upload Post image</h3>
+       <input required="true" onChange={this.coverphotohandler} type="file" id="file" name="file" class="inputfile1"/>
+       <h3 style="font-size: 25px;color:grey">Add caption</h3>
+       <textarea type="text" id="title" name="title" placeholder="Caption" class="form-control createpost-text-input"></textarea>
+       <input  type="submit"   value="Post" class="input-button"/>
+   </form>
+
+   </div>
+   <script>
+   
+
+
+   </script>
+</div>
+
+{%endblock%}

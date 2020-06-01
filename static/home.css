@@ -1,0 +1,108 @@
+@media only screen and (max-width:900px){
+    .body-container{
+        overflow: auto;
+        margin-left: 10px;
+    }
+}
+
+
+
+
+.post-container{
+    
+    margin-right: 10px;
+    margin-left: 10px;
+    border-radius: 12px;
+    margin-top: 70px;
+    
+      
+}
+
+.post-title{
+    font-size: 20px;
+}
+
+
+
+.post-img{
+    height: 400px;
+    width:100%;
+    border-radius: 10px;
+    top: 0;
+    left:0;
+}
+
+@media only screen and (min-width:768px){
+
+    .post-img{
+        height: 500px;
+        width:100%;
+        border-radius: 10px;
+        top: 0;
+        left:0;
+    }
+}
+
+.post-footer{
+     
+}
+
+.avatar{
+    width:50px;
+    height:50px;
+    border-radius: 50px;
+    border:5px solid white;
+    box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
+    -o-box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
+    -ms-box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
+      
+}
+
+.avatar-container{
+    margin-top: 10px;
+    flex-direction: row;
+    display:flex;
+    
+}
+
+
+.delete-button{
+    background-color: rgb(184, 23, 103);
+    border-radius: 8px;
+    color:white;
+    border:2px solid rgb(184, 23, 103);
+    height:30px;
+    margin-top:20px;
+}
+
+
+.nameinput{
+    width:200px;
+    border: 1px solid whitesmoke;
+    background-color:whitesmoke;
+    border-radius: 15px;
+    padding-bottom:5px;
+    padding-top:5px;
+    padding-left:5px;
+    margin-top:15px;
+    color: black;
+}
+
+
+@media only screen and (max-width:768px){
+
+.nameinput{
+    width:120px;
+    border: 1px solid whitesmoke;
+    background-color:whitesmoke;
+    border-radius: 15px;
+    padding-bottom:5px;
+    padding-top:5px;
+    padding-left:5px;
+    margin-top:15px;
+    color: black;
+}
+}
+

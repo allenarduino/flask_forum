@@ -1,0 +1,57 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+   <title>Myblog</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{{ url_for('static',filename='bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='bootstrap.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='userprofile.css')}}">
+    
+   <!-----<script src="{{ url_for('static',filename='main.js')}}"></script>
+    <script src="{{url_for('static',filename='jquery.3.2.1.min.js')}}"></script>-->
+    
+    </head>
+
+
+
+
+    {%extends "header.html"%}
+
+{%block content%}
+<div style="overflow: auto;">
+
+
+{%for row in userprofile %}
+
+<div><img src="{{url_for('static', filename=row['coverphoto'])}}" class="coverphoto"/></div>
+<div class="col text-center"><img src="{{url_for('static',filename=row['user_img'])}}" class="avatar"/></div>
+
+<h3 class="name">{{row["name"]}}</h3>
+<h5 class="info">{{row["bio"]}}</h5>
+
+
+{%if session["user_id"]==row["id"]%}
+<div class="buttoncontainer col text-center">
+    <a href="/createpostpage"><button class="profilebutton1">Createpost</button></a>
+ <a href="/editprofilepage"><button class="profilebutton2">Edit profile</button></a>
+ 
+</div>
+{%else%}
+<h1 style="color:white">j</h1>
+{%endif%}
+
+{%if session["user_id"]==row["id"]%}
+
+<div style="display: flex;justify-content: center;"><a href="/logout" ><button class="logoutbutton">Logout</button></a></div>
+</div>
+{%endif%}
+
+
+
+{%endfor%}
+
+
+{%endblock%}

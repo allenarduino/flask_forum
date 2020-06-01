@@ -1,0 +1,89 @@
+
+.upload-button{
+    margin-left: -60px;
+    padding-right: 2px;
+    padding-left:2px;
+    border-radius: 15px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    color:white;
+    border:2px solid rgb(184, 23, 103);
+    background-color: rgb(184, 23, 103);
+}
+
+
+.inputfile1::-webkit-file-upload-button{
+    visibility: hidden;
+}
+
+.inputfile1::before{
+   content: "Choose photo";
+   display: inline-block;
+   border-radius: 10px;
+   border:2px solid rgb(184, 23, 103);
+   outline: none;
+   -webkit-user-select: none;
+   cursor: pointer;
+   color:white;
+   background-color: rgb(184, 23, 103);
+}
+
+
+
+.nameinput{
+    width:250px;
+    border: 1px solid whitesmoke;
+    background-color:whitesmoke;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    padding-bottom:5px;
+    padding-top:5px;
+    padding-left:5px;
+    margin-top:1px;
+}
+
+.namebutton{
+    margin-left: -50px;
+    padding-right: 2px;
+    padding-left:2px;
+    border-radius: 15px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    color:white;
+    position: relative;
+    margin-top: 0px;
+    border:2px solid rgb(184, 23, 103);
+    background-color: rgb(184, 23, 103);
+}
+
+
+
+.formbackground{
+    background-color:whitesmoke;
+    height: 100vh;
+    width: 100vw;
+    overflow: auto;
+    align-items: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.form-container{
+    background-color: #fff;
+    width:400px;
+    height: 500px;
+    padding:50px;
+    border-radius: 10px;  
+    box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
+    -o-box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
+    -ms-box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
+}
+
+
+
+
+
